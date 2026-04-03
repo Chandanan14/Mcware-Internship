@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5</title>
+    <!--<link rel="stylesheet" href="../bootstrap-5.3.8-dist/css/bootstrap.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+<body>
+
+    <h1>Container</h1>
+    <div class="container">
+        demo-1
+    </div>
+
+    <h1>Container Fuid</h1>
+    <div class="container-fluid">
+        demo-1
+    </div>
+
+    <h1>Col</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col box1">
+                box 1
+            </div>
+            <div class="col box2">
+                box 2
+            </div>
+            <div class="col box3">
+                box 3
+            </div>
+            <div class="col box4">
+                box 4
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <h1>Col 12</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 box1">
+                box 1
+            </div>
+
+        </div>
+    </div>
+
+    <h1>Col 6-6</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6 box2">
+                box 2
+            </div>
+
+            <div class="col-6 box3">
+                box 3
+            </div>
+        </div>
+    </div>
+
+
+    <h1>col 12 for md(medium size else col)</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col col-md-12 box1">
+                box 1
+            </div>
+            <div class="col col-md-12 box2">
+                box 2
+            </div>
+        </div>
+    </div>
+
+    <h1>offset</h1>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-3 box1">
+                box 1
+            </div>
+            <div class="offset-md-3 col-md-3 box2">
+                box 2
+            </div>
+        </div>
+    </div>
+
+    <h1>order class</h1>
+    <h2>before</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col box1">
+                box 1
+            </div>
+            <div class="col box2">
+                box 2
+            </div>
+            <div class="col box3">
+                box 3
+            </div>
+        </div>
+    </div>
+
+    <h2>After</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col order-last box1">
+                box 1
+            </div>
+            <div class="col box2">
+                box 2
+            </div>
+            <div class="col  order-first box3">
+                box 3
+            </div>
+        </div>
+    </div>
+
+
+    <h1>order class for different screensize</h1>
+    <h2>change screensize and check for change of order</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col box1 order-sm-2">
+                box 1
+            </div>
+            <div class="col box2 order-sm-3">
+                box 2
+            </div>
+            <div class="col box3 order-sm-1">
+                box 3
+            </div>
+        </div>
+    </div>
+
+
+
+    <h1>Nesting</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 box2">
+                box 1
+                <div class="row">
+                    <div class="col-6 box4">
+                        BOX A
+                    </div>
+                    <div class="col-6 box3">
+                        BOX B
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 box1">
+                box 2
+            </div>
+
+        </div>
+    </div>
+
+
+    <h1>Centering div by margin</h1>
+    <h2>m-auto(top+bottom+left+right)</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 m-auto box1">
+                box 1
+            </div>
+        </div>
+    </div>
+
+    <h2>mx-auto(left+right)</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 mx-auto box1">
+                box 1
+            </div>
+        </div>
+    </div>
+
+    <h2>ms-auto(positiong at right)</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 ms-auto box1">
+                box 1
+            </div>
+        </div>
+    </div>
+
+
+    <h2>me-auto(positiong at left)</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 me-auto box1">
+                box 1
+            </div>
+        </div>
+    </div>
+
+    <h1>Margin top</h1>
+    <h2>mt</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 mt-5 box2">
+                box 1
+            </div>
+        </div>
+    </div>
+
+
+    <h1>Margin Bottom</h1>
+    <h2>mb</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 mb-5 box3">
+                box 1
+            </div>
+        </div>
+    </div>
+
+
+    <h1>Margin Left</h1>
+    <h2>ms</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 ms-5 box4">
+                box 1
+            </div>
+        </div>
+    </div>
+
+    <h1>Margin Right</h1>
+    <h2>me</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 me-5 box1">
+                box 1
+            </div>
+        </div>
+    </div>
+
+    <h1>Padding</h1>
+    <h2>p(top+bottom+left+right)</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 p-5 m-auto txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+
+    <h1>Padding</h1>
+    <h2>px and py</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 px-5  txt-box1">
+                <h3>px(left+right)</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 py-5 txt-box2">
+                <h3>py(top+bottom)</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+
+    <h1>Padding</h1>
+    <h2>pt,pb,ps,pe</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 pt-5 txt-box1">
+                <h3>pt(top)</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 pb-5 txt-box2">
+                <h3>pb(bottom)</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 ps-5 txt-box3">
+                <h3>pt(left)</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 pe-5  txt-box4">
+                <h3>pl(right)</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+        </div>
+    </div>
+
+
+    <h1>justify Content</h1>
+    <h2>justify-content-start</h2>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+    <h2>justify-content-end</h2>
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+
+    <h2>justify-content-center</h2>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+
+    <h2>justify-content-between</h2>
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+
+    <h2>justify-content-around</h2>
+    <div class="container">
+        <div class="row justify-content-around">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+
+    <h2>justify-content-evenly</h2>
+    <div class="container">
+        <div class="row justify-content-evenly">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+    <h1>Align Items</h1>
+    <h2>align items start</h2>
+    <div class="container">
+        <div class="row align-items-start">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <h2>align items end</h2>
+    <div class="container">
+        <div class="row align-items-end">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+
+            </div>
+        </div>
+        </div>
+
+
+
+          <h2>align items center</h2>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+
+            </div>
+        </div>
+        </div>
+
+
+
+          <h2>align items baseline</h2>
+    <div class="container">
+        <div class="row align-items-baseline">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+
+            </div>
+        </div>
+        </div>
+
+
+          <h2>align items strech</h2>
+    <div class="container">
+        <div class="row align-items-strech">
+            <div class="col-3 txt-box1">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div class="col-3 txt-box2">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+
+            </div>
+            <div class="col-3  txt-box3">
+
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+
+            </div>
+        </div>
+        </div>
+
+
+        <h1>Align Content</h1>
+        <h2>Align-content-start</h2>
+        <div class="container">
+        <div class="row align-content-start" style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box4">
+             totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+            </div>
+
+             <div class="col-md-3 txt-box4">
+                Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+            <h2>Align-content-end</h2>
+        <div class="container">
+        <div class="row align-content-end" style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box4">
+             totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+            </div>
+
+             <div class="col-md-3 txt-box4">
+                Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+
+        </div>
+    </div>
+
+
+     <h2>Align-content-center</h2>
+        <div class="container">
+        <div class="row align-content-center" style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box4">
+             totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+            </div>
+
+             <div class="col-md-3 txt-box4">
+                Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+
+        </div>
+    </div>
+
+
+    
+     <h2>Align-content-between</h2>
+        <div class="container">
+        <div class="row align-content-between" style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box4">
+             totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+            </div>
+
+             <div class="col-md-3 txt-box4">
+                Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <h2>Align-content-around</h2>
+        <div class="container">
+        <div class="row align-content-around" style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box4">
+             totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+            </div>
+
+             <div class="col-md-3 txt-box4">
+                Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+
+        </div>
+    </div>
+
+<h2>Align-content-strech</h2>
+        <div class="container">
+        <div class="row align-content-strech" style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box4">
+             totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+             <div class="col-md-3 txt-box3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam.
+            </div>
+
+             <div class="col-md-3 txt-box4">
+                Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+
+
+        </div>
+    </div>
+
+
+     <h1>Align Self</h1>
+        <h2>Align-self-start</h2>
+        <div class="container">
+        <div class="row " style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-5  align-self-start  txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+    <h2>Align-self-end</h2>
+        <div class="container">
+        <div class="row " style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-5  align-self-end  txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+    <h2>Align-self-center</h2>
+        <div class="container">
+        <div class="row " style="height: 500px;">
+            <div class="col-md-3 txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-5  align-self-center  txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+    <h2>Align-self-baseline</h2>
+        <div class="container">
+        <div class="row " style="height: 500px;">
+            <div class="col-md-3  align-self-baseline txt-box1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+                totam officiis eos tempora eveniet aperiam laboriosam. Libero dolorum nemo, modi numquam voluptate
+                quisquam iste fuga voluptatibus?
+            </div>
+             <div class="col-md-3 txt-box2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus natus recusandae atque excepturi
+               
+            </div>
+
+             <div class="col-md-5   txt-box3">
+                quisquam iste fuga voluptatibus?
+            </div>
+
+        </div>
+    </div>
+
+    <h1>Flex</h1>
+    <h2>flex row (default)</h2>
+    <div class="container">
+        <div class="row flex-row">
+            <div class="col-4 box1">
+             <h1>Column A</h1>
+            </div>
+            <div class=" col-4 box2">
+             <h1>Column B</h1>
+            </div>
+            <div class=" col-4 box3">
+            <h1>Column C</h1>
+            </div>
+        </div>
+    </div>
+
+    <h2>flex row reverse</h2>
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-4 box1">
+             <h1>Column A</h1>
+            </div>
+            <div class=" col-4 box2">
+             <h1>Column B</h1>
+            </div>
+            <div class=" col-4 box3">
+            <h1>Column C</h1>
+            </div>
+        </div>
+    </div>
+
+    <h2>flex  column</h2>
+    <div class="container">
+        <div class="row flex-column">
+            <div class="col-4 box1">
+             <h1>Column A</h1>
+            </div>
+            <div class=" col-4 box2">
+             <h1>Column B</h1>
+            </div>
+            <div class=" col-4 box3">
+            <h1>Column C</h1>
+            </div>
+        </div>
+    </div>
+
+    <h2>flex  column reverse</h2>
+    <div class="container">
+        <div class="row flex-column-reverse">
+            <div class="col-4 box1">
+             <h1>Column A</h1>
+            </div>
+            <div class=" col-4 box2">
+             <h1>Column B</h1>
+            </div>
+            <div class=" col-4 box3">
+            <h1>Column C</h1>
+            </div>
+        </div>
+    </div>
+
+    <h2>flex wrap(default)</h2>
+    <div class="container">
+        <div class="row flex-row">
+            <div class="col-4 box1">
+             <h1>Column A</h1>
+            </div>
+            <div class=" col-4 box2">
+             <h1>Column B</h1>
+            </div>
+            <div class=" col-4 box3">
+            <h1>Column C</h1>
+            </div>
+            <div class=" col-4 box4">
+            <h1>Column D</h1>
+            </div>
+        </div>
+    </div>
+
+ <h2>flex no-wrap</h2>
+    <div class="container">
+        <div class="row flex-nowrap">
+            <div class="col-4 box1">
+             <h1>Column A</h1>
+            </div>
+            <div class=" col-4 box2">
+             <h1>Column B</h1>
+            </div>
+            <div class=" col-4 box3">
+            <h1>Column C</h1>
+            </div>
+            <div class=" col-4 box4">
+            <h1>Column D</h1>
+            </div>
+        </div>
+    </div>
+
+    <h2>flex wrap reverse</h2>
+    <div class="container">
+        <div class="row flex-wrap-reverse">
+            <div class="col-4 box1">
+             <h1>Column A</h1>
+            </div>
+            <div class=" col-4 box2">
+             <h1>Column B</h1>
+            </div>
+            <div class=" col-4 box3">
+            <h1>Column C</h1>
+            </div>
+            <div class=" col-4 box4">
+            <h1>Column D</h1>
+            </div>
+        </div>
+    </div>
+
+    <h2>flex fill</h2>
+    <div class="container">
+        <div class="row ">
+            <div class="col box1">
+             <h1 >Column A</h1>
+            </div>
+            <div class=" col  flex-fill  box2">
+             <h1>Column B</h1>
+            </div>
+            <div class=" col box3">
+            <h1>Column C</h1>
+            </div>
+            <div class=" col box4">
+            <h1>Column D</h1>
+            </div>
+        </div>
+    </div>
+
+    <h1>
+        Float classes
+    </h1>
+
+<div class="container clearfix">
+    <div class="box1 float-start">
+<h2>Col A</h2>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class="box2 float-end">
+<h2>Col B</h2>
+quo sequi tenetur, officiis similique temporibus laborum 
+    </div>
+</div>
+
+
+<h1> width classes</h1>
+
+<div class="container clearfix d-inline-flex">
+    <div class="box1 w-75 ">
+<h2>Col A</h2>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class="box2 w-25 ">
+<h2>Col B</h2>
+quo sequi tenetur, officiis similique temporibus laborum 
+    </div>
+</div>
+
+
+<h1> height classes</h1>
+
+<div class="container clearfix ">
+    <div class=" vh-100 float-start " style="background-color: blueviolet;">
+<h2>Col A</h2>
+Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
+    <div class=" h-25  float-end " style="background-color: rgb(226, 43, 46);">
+<h2>Col B</h2>
+quo sequi tenetur, officiis similique temporibus laborum 
+    </div>
+</div>
+
+<h1>Table</h1>
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+
+</html>

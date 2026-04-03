@@ -1,0 +1,155 @@
+body{
+
+    background-color: aliceblue;
+}
+
+
+#heading{
+
+    font-size: 50px;
+    text-align: center;
+    color: rgb(42, 137, 245);
+}
+
+table,th,td{
+    border:1px solid black;
+   
+    font-size: 30px;
+    padding: 8px;
+  
+}
+caption{
+    font-weight: bold;
+}
+
+th{
+    background-color: rgb(255, 229, 164);
+    border-radius: 20px;
+
+}
+
+th:hover{
+    background-color: rgb(224, 201, 141);
+
+}
+
+td{
+    background-color: rgb(247, 177, 212);
+     border-radius: 20px;
+     text-align: center;
+}
+td:hover{
+     background-color: rgb(247, 147, 197);
+    
+}
+
+table{
+    margin: 50px;
+    margin-left: 350px;
+    border-radius: 30px;
+}
+
+.d-btn{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 1300px;
+    margin-bottom: 50px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     color: rgb(0, 30, 114);
+    background-color: rgb(131, 183, 241);
+    border: 5px double rgb(12, 108, 218);
+
+}
+
+.d-btn:hover,.visit-btn:hover{
+     background-color: rgb(110, 171, 240);
+     font-size: 23px;
+}
+
+h2{
+    font-size: 40px;
+}
+
+li{
+    font-size: 20px;
+}
+li:hover{
+    background-color:  rgb(74, 74, 212);
+    border-radius: 30px;
+    color:  rgb(189, 189, 255);
+}
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    color: rgb(74, 74, 212);
+    
+}
+
+.div1{
+    background-color: antiquewhite;
+    padding: 30px;
+    width: 400px;
+    margin-bottom: 30px;
+    background-color: rgb(189, 189, 255);
+    border-radius: 50px;
+
+}
+
+.div2{
+    background-color: antiquewhite;
+    padding: 20px;
+     width: 400px;
+     background-color: rgb(189, 189, 255);
+      border-radius: 50px;
+
+}
+
+.box{
+    display: flex;
+    flex-direction: row;
+}
+
+.i-div{
+    margin-right: 50px;
+    margin-left: 400px;
+    margin-top: 0;
+}
+
+
+#map{
+    font-size: 30px;
+    margin-left: 400px;
+    color:  rgb(17, 123, 245);
+    border-left: 10px solid rgb(17, 123, 245);
+    padding-left: 15px;
+}
+
+.visit-btn{
+     font-size: 20px;
+    padding: 8px;
+    border-radius: 20px;
+    margin: 30px;
+    margin-left: 550px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     color: rgb(0, 30, 114);
+    background-color: rgb(131, 183, 241);
+    border: 5px double rgb(12, 108, 218);
+}
+
+#map-sec{
+
+background-color: rgb(205, 235, 255);
+padding: 30px;
+border-top: 4px dotted rgb(107, 107, 218);
+
+}
+
+footer{
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(42, 137, 245);
+}

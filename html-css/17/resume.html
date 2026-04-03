@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <style>
+        * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+.form-section, .preview-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 48%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.preview-section img {
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+h1, h3 {
+    margin-top: 0;
+}
+
+    </style>
+
+<div class="container">
+
+    <!-- FORM -->
+    <form id="resume-form" class="form-section">
+
+        <!-- Step 1: Personal Info -->
+        <fieldset class="step" id="step-1">
+            <legend>Personal Info</legend>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email">
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address">
+
+            <label for="pfp">Profile Picture:</label>
+            <input type="file" id="pfp" accept="image/*">
+
+            <button type="button" id="next-1">Next</button>
+        </fieldset>
+
+        <!-- Step 2: Education -->
+        <fieldset class="step" id="step-2" style="display:none;">
+            <legend>Education</legend>
+
+            <label for="degree">Degree:</label>
+            <input type="text" id="degree">
+
+            <label for="school">School/University:</label>
+            <input type="text" id="school">
+
+            <label for="yog">Year of Graduation:</label>
+            <input type="text" id="yog">
+
+            <label for="gpa">GPA:</label>
+            <input type="text" id="gpa">
+
+            <div class="buttons">
+                <button type="button" id="prev-2">Previous</button>
+                <button type="button" id="next-2">Next</button>
+            </div>
+        </fieldset>
+
+        <!-- Step 3: Work Experience -->
+        <fieldset class="step" id="step-3" style="display:none;">
+            <legend>Work Experience</legend>
+
+            <label for="j-title">Job Title:</label>
+            <input type="text" id="j-title">
+
+            <label for="c-name">Company Name:</label>
+            <input type="text" id="c-name">
+
+            <label for="duration">Duration:</label>
+            <input type="text" id="duration">
+
+            <label for="c-desc">Description:</label>
+            <textarea id="c-desc"></textarea>
+
+            <div class="buttons">
+                <button type="button" id="prev-3">Previous</button>
+                <button type="button" id="next-3">Next</button>
+            </div>
+        </fieldset>
+
+        <!-- Step 4: Skills -->
+        <fieldset class="step" id="step-4" style="display:none;">
+            <legend>Skills</legend>
+
+            <label for="t-skills">Technical Skills:</label>
+            <input type="text" id="t-skills">
+
+            <p>Languages:</p>
+            <label><input type="checkbox" id="eng" value="English"> English</label>
+            <label><input type="checkbox" id="kan" value="Kannada"> Kannada</label>
+            <label><input type="checkbox" id="hin" value="Hindi"> Hindi</label>
+
+            <label for="cert">Certifications:</label>
+            <input type="text" id="cert">
+
+            <div class="buttons">
+                <button type="button" id="prev-4">Previous</button>
+                <button type="button" id="next-4">Next</button>
+            </div>
+        </fieldset>
+
+        <!-- Step 5: Projects -->
+        <fieldset class="step" id="step-5" style="display:none;">
+            <legend>Projects</legend>
+
+            <label for="p-title">Project Title:</label>
+            <input type="text" id="p-title">
+
+            <label for="p-desc">Description:</label>
+            <textarea id="p-desc"></textarea>
+
+            <label for="tech">Technologies Used:</label>
+            <input type="text" id="tech">
+
+            <div class="buttons">
+                <button type="button" id="prev-5">Previous</button>
+                <button type="submit" id="generate">Generate Resume</button>
+            </div>
+        </fieldset>
+
+    </form>
+
+    <!-- PREVIEW -->
+    <div class="preview-section">
+        <h1>Resume Preview</h1>
+
+        <h3>Personal Information:</h3>
+        <p><strong>Full Name:</strong> <span id="rname"></span></p>
+        <p><strong>Email:</strong> <span id="r-email"></span></p>
+        <p><strong>Phone:</strong> <span id="r-phone"></span></p>
+        <p><strong>Address:</strong> <span id="r-address"></span></p>
+        <p><strong>Profile Picture:</strong><br> <img id="r-pfp" src="" alt="" width="100"></p>
+
+        <hr>
+
+        <h3>Education:</h3>
+        <p><strong>Degree:</strong> <span id="r-degree"></span></p>
+        <p><strong>School/University:</strong> <span id="r-school"></span></p>
+        <p><strong>Year of Graduation:</strong> <span id="r-yog"></span></p>
+        <p><strong>GPA:</strong> <span id="r-gpa"></span></p>
+
+        <hr>
+
+        <h3>Work Experience:</h3>
+        <p><strong>Job Title:</strong> <span id="r-jtitle"></span></p>
+        <p><strong>Company Name:</strong> <span id="r-cname"></span></p>
+        <p><strong>Duration:</strong> <span id="r-duration"></span></p>
+        <p><strong>Description:</strong> <span id="r-cdesc"></span></p>
+
+        <hr>
+
+        <h3>Skills:</h3>
+        <p><strong>Technical Skills:</strong> <span id="r-tskills"></span></p>
+        <p><strong>Languages:</strong> <span id="r-lang"></span></p>
+        <p><strong>Certifications:</strong> <span id="r-cert"></span></p>
+
+        <hr>
+
+        <h3>Projects:</h3>
+        <p><strong>Project Title:</strong> <span id="r-ptitle"></span></p>
+        <p><strong>Description:</strong> <span id="r-pdesc"></span></p>
+        <p><strong>Technologies:</strong> <span id="r-tech"></span></p>
+    </div>
+
+</div>
+
+<script src="res.js"></script>
+</body>
+</html>

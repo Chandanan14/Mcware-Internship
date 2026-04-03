@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaX Headphones</title>
+
+<!-- Custom Font -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =====================
+   GLOBAL STYLES
+===================== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  background: linear-gradient(45deg, #00f5ff, #ff00c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow 2s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00f5ff; }
+  to { text-shadow: 0 0 20px #ff00c8; }
+}
+
+.hero p {
+  max-width: 500px;
+  margin: 20px;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* =====================
+   BUTTON (Transitions + 2D Transform)
+===================== */
+.btn {
+  padding: 15px 35px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff00c8, #00f5ff);
+  color: white;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+}
+
+/* =====================
+   FEATURES SECTION
+===================== */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  padding: 30px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1f2c40, #2c3e50);
+  box-shadow: 10px 10px 30px #0f1720,
+              -10px -10px 30px #2f435a;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover {
+  transform: rotateY(15deg) rotateX(10deg);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+/* =====================
+   MODAL (Minimal JS Interaction)
+===================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s ease;
+}
+
+.modal-content {
+  background: linear-gradient(45deg, #00f5ff, #ff00c8);
+  padding: 40px;
+  border-radius: 20px;
+  color: black;
+  font-weight: bold;
+  transform: scale(0);
+  transition: 0.4s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>NovaX</h1>
+  <p>Experience sound like never before. Deep bass. Crystal clarity. Futuristic design.</p>
+  <button class="btn" id="buyBtn">Buy Now</button>
+</section>
+
+<section class="features">
+  <div class="card">
+    <h3>360° Sound</h3>
+    <p>Immersive surround experience.</p>
+  </div>
+  <div class="card">
+    <h3>Noise Cancel</h3>
+    <p>Block the world. Focus on music.</p>
+  </div>
+  <div class="card">
+    <h3>40h Battery</h3>
+    <p>All-day performance.</p>
+  </div>
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    🎉 Order Confirmed!
+  </div>
+</div>
+
+<script>
+const btn = document.getElementById("buyBtn");
+const modal = document.getElementById("modal");
+
+btn.addEventListener("click", () => {
+  modal.classList.add("show");
+});
+
+modal.addEventListener("click", () => {
+  modal.classList.remove("show");
+});
+</script>
+
+</body>
+</html>

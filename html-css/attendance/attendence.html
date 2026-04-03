@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WorkTrack - Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        h1{
+            background-color: rgb(130, 130, 229);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container{
+            width: 60vw;
+            padding: 20px;
+            margin-left: 70px;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 40px -20px;
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td{
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th{
+            background-color: rgb(230, 230, 250);
+        }
+
+        button{
+            padding: 8px 15px;
+            background-color: rgb(130, 130, 229);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: rgb(100, 100, 200);
+        }
+
+        .logout-btn{
+            margin-top: 20px;
+            float: right;
+            margin-right: 200px;
+        }
+        .wrap{
+            display: flex;
+            flex-direction: row;
+        }
+
+        nav{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            height: 100vh;
+             background-color: white;
+             box-shadow: rgba(50, 50, 93, 0.25) 0px 20px 40px -20px;
+             border-top-right-radius:15px;
+             border-bottom-right-radius: 15px;
+        }
+        ul{
+            margin-top: 50px;
+        }
+
+        a{
+            text-decoration: none;
+            font-size: 1.6rem;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        header{
+            width: 68vw;
+            border: none;
+            padding: 20px;
+            margin-bottom: 0;
+        }
+
+        #search{
+            font-size: 18px;
+            padding: 6px;
+            width: 80%;
+            border-radius: 20px;
+            border: none;
+            margin-left: 50px;
+            
+        }
+
+       
+    </style>
+</head>
+<body>
+    
+
+    <div class="wrap">
+
+         <nav>
+        <ul>
+            <li><a href="">Home</a> </li>
+            <li><a href="">Attendance Tracker</a> </li>
+            <li><a href=""> <button class="logout-btn">Logout</button> </a></li>
+
+        </ul>
+    </nav>
+
+    <div class="content">
+
+     <header>
+
+   <input type="text" id="search" placeholder="Search.." >
+
+   <img src="">
+
+
+    </header>
+
+    <div class="container">
+        <h2>Attendance Tracker</h2>
+
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Login Time</th>
+                    <th>Logout Time</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+        </table>
+
+       
+    </div>
+
+
+    </div>
+
+    </div>
+
+   <script>
+// 1️⃣ Get users from localStorage
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+// 2️⃣ Get today's attendance records or create empty
+let today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+let attendanceRecords = JSON.parse(localStorage.getItem("attendance")) || [];
+
+// Filter only today's attendance
+let todayAttendance = attendanceRecords.filter(a => a.date === today);
+
+// 3️⃣ Populate table
+const tableBody = document.querySelector("#attendanceTable tbody");
+
+users.forEach(user => {
+    // Check if already marked today
+    let record = todayAttendance.find(a => a.email === user.email);
+    let status = record ? record.status : "Absent";
+    let loginTime = record ? record.loginTime : "-";
+    let logoutTime = record ? record.logoutTime || "-" : "-";
+
+    let tr = document.createElement("tr");
+
+    tr.innerHTML = `
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td class="status">${status}</td>
+        <td class="loginTime">${loginTime}</td>
+        <td class="logoutTime">${logoutTime}</td>
+        <td>
+            <button class="markPresent" ${status === "Present" ? "disabled" : ""}>Mark Present</button>
+        </td>
+    `;
+
+    tableBody.appendChild(tr);
+});
+
+// 4️⃣ Add event listener to buttons
+document.querySelectorAll(".markPresent").forEach(button => {
+    button.addEventListener("click", function() {
+        let row = this.closest("tr");
+        let email = row.children[1].textContent;
+        let name = row.children[0].textContent;
+
+        let now = new Date();
+        let timeStr = now.getHours().toString().padStart(2,'0') + ":" + now.getMinutes().toString().padStart(2,'0');
+
+        // Update row
+        row.querySelector(".status").textContent = "Present";
+        row.querySelector(".loginTime").textContent = timeStr;
+        this.disabled = true;
+
+        // Save attendance in localStorage
+        let existingRecordIndex = todayAttendance.findIndex(a => a.email === email);
+        if(existingRecordIndex > -1){
+            todayAttendance[existingRecordIndex].status = "Present";
+            todayAttendance[existingRecordIndex].loginTime = timeStr;
+        } else {
+            todayAttendance.push({
+                email: email,
+                name: name,
+                date: today,
+                status: "Present",
+                loginTime: timeStr,
+                logoutTime: null
+            });
+        }
+
+        // Save all attendance back to localStorage
+        // First remove any old records of today from the main array
+        attendanceRecords = attendanceRecords.filter(a => a.date !== today);
+        // Add updated todayAttendance
+        attendanceRecords = attendanceRecords.concat(todayAttendance);
+        localStorage.setItem("attendance", JSON.stringify(attendanceRecords));
+    });
+});
+</script>
+</body>
+</html>

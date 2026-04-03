@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Button Hover Challenge</title>
+<link href="https://api.fontshare.com/v2/css?f[]=sharpie@300&display=swap" rel="stylesheet">
+<style>
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#cdc4fa, #6851ec);
+    overflow: hidden;
+    font-family: sans-serif;
+  }
+
+  #game-button {
+    position: absolute;
+    padding: 20px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, top 0.3s ease, left 0.3s ease;
+  }
+
+  #game-button:hover {
+    transform: scale(1.1);
+  }
+
+  h1 {
+  text-shadow: 2px 2px 3px red;
+  font-family: 'Sharpie', sans-serif;
+  font-size: 50px;
+  transition: transform 2s ease ;
+
+}
+
+h1:hover{
+   transform: scale(1.1);
+
+}
+
+div {
+    position: absolute;
+top:30px;
+left:450px;
+text-align: center;
+  width: 300px;
+  height: 80px;
+  padding: 15px;
+  background-color: rgb(193, 224, 255);
+  box-shadow: 10px 10px;
+  border-radius: 20px;
+  
+}
+
+div:hover{
+     background-color: rgb(112, 178, 243);
+}
+
+div p{
+    font-family: myfont;
+    font-size: 15px;
+    animation-name: myAnimation;
+  animation-duration: 1s;
+}
+
+@font-face{
+    font-family: myfont;
+  src: url(Galldis.ttf);
+}
+
+
+
+@keyframes myAnimation {
+  from {
+    font-size: 15px;
+  }
+  to {
+     font-size: 20px;
+     color: #cb1133;
+     font-weight: bold;
+  }
+}
+
+
+
+</style>
+</head>
+<body>
+    <div id="message"><p id="text">Catch me if you can!</p></div>
+    <h1>Button Hover Challenge</h1>
+<button id="game-button">Click Me!</button>
+
+<script>
+const button = document.getElementById('game-button');
+button.addEventListener('mouseenter', () => {
+  const maxX = window.innerWidth - button.offsetWidth;
+  const maxY = window.innerHeight - button.offsetHeight;
+  
+  const randomX = Math.floor(Math.random() * maxX);
+  const randomY = Math.floor(Math.random() * maxY);
+  
+  button.style.left = randomX + 'px';
+  button.style.top = randomY + 'px';
+});
+
+
+const message = document.getElementById('message');
+
+button.addEventListener('click', () => {  
+   getElementById('text').textContent="You Clicked You Won!!"
+});
+
+
+</script>
+
+</body>
+</html>

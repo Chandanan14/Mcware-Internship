@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        header{
+            width: 98vw;
+            height: 100px;
+            border:1px solid black;
+            background-color: rgb(255, 211, 54);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        #search{
+            font-size: 20px;
+            padding: 10px;
+            height: 10px;
+            margin-top: 30px;
+            border-radius: 30px;
+            width: 700px;
+        }
+       
+        nav{
+            width: 98vw;
+            background-color: #222;
+            
+            
+        }
+        ul{
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-evenly;
+        }
+        a{
+            text-decoration:none ;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+        }
+
+        .prdt-grid{
+            display: grid;
+            grid-template-columns:1fr 1fr 1fr;
+            row-gap: 50px;
+            padding: 50px;
+
+        }
+        
+        .prdt-card{
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+        }
+
+        .prdt-card img{
+            width: 90%;
+            height: 50%;
+            margin: 10px;
+            border: 1px solid black;
+        }
+
+        .prdt-card button{
+            font-size: 15px;
+           background-color: rgb(255, 211, 54);;
+        }
+        
+        #title{
+            margin:5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #price{
+            font-size: 18px;
+        }
+
+       footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #222;
+    color: white;
+}
+
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <img id="pfp" src="">
+        <input type="text" placeholder="Search" id="search">
+        <h1>BuyIt</h1>
+
+    </header>
+    <nav>
+    
+      <ul>
+        <li><a href="">home</a></li>
+        <li><a href="">category</a></li>
+        <li><a href="">Best Sellers</a></li>
+        <li><a href="">Laptops</a></li>
+        <li><a href="">New Arrivalss</a></li>
+      </ul>
+
+    </nav>
+<main>
+
+<div class="prdt-grid">
+    <div class="prdt-card">
+      <img src="laptop.jpg" >
+      <p id="title">Gaming Laptop</p>
+      <p id="price">$1,299</p>
+      <button>Add to Cart</button>
+</div>
+<div class="prdt-card">
+      <img src="headphones.jpg" >
+      <p  id="title">Wireless Headphones</p>
+      <p id="price">$199</p>
+      <button>Add to Cart</button>
+</div>
+<div class="prdt-card">
+      <img src="smartphone.jpg" >
+      <p  id="title">Smartphone X</p>
+      <p id="price">$899</p>
+      <button>Add to Cart</button>
+</div>
+<div class="prdt-card">
+      <img src="watch.jpg" >
+      <p  id="title">Smartwatch Pro</p>
+      <p id="price">$249</p>
+      <button>Add to Cart</button>
+</div>
+<div class="prdt-card">
+      <img src="monitor.jpg" >
+      <p  id="title">4K Monitor</p>
+      <p id="price">$399</p>
+      <button>Add to Cart</button>
+</div>
+<div class="prdt-card">
+      <img src="speaker.jpg" >
+      <p  id="title">Bluetooth Speaker</p>
+      <p id="price">$149</p>
+      <button>Add to Cart</button>
+</div>
+<div class="prdt-card">
+      <img src="mouse.jpg" >
+      <p  id="title">Gaming Mouse</p>
+      <p id="price">$79</p>
+      <button>Add to Cart</button>
+</div>
+<div class="prdt-card">
+      <img src="keyboard.jpg" >
+      <p  id="title">Mechanical Keyboard</p>
+      <p id="price">$129</p>
+      <button>Add to Cart</button>
+</div>
+<div class="prdt-card">
+      <img src="drone.jpg" >
+      <p  id="title">Drone X200</p>
+      <p id="price">$599</p>
+      <button>Add to Cart</button>
+</div>
+</div>
+
+
+</main>
+<footer>
+<p>© 2026 TechStore. All rights reserved</p>
+</footer>
+
+</body>
+</html>
