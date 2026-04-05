@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Dashboard</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+/* 🎥 Video background */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* 🌑 Overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  padding: 10px;
+  width: 200px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.valid-box {
+  margin-bottom: 10px;
+  color: #ff6a6a;
+}
+
+.dashboard {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.1);
+}
+
+.location h2 {
+  margin: 0;
+  font-size: 45px;
+}
+
+.main-weather h1 {
+  font-size: 35px;
+  margin: 10px 0;
+}
+
+.main-weather img {
+  width: 80px;
+}
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎥 Background Video -->
+<video id="bg-video" src="" autoplay muted loop></video>
+
+<div class="app">
+
+  <div class="search-box">
+    <input type="text" id="cityInput" placeholder="Search city...">
+    <button onclick="showWeather()">Search</button>
+  </div>
+
+  <div class="valid-box"></div>
+
+  <div class="dashboard">
+
+    <div class="location">
+      <h2 id="place-name">City</h2>
+      <p id="time">Local Time</p>
+    </div>
+
+    <div class="main-weather">
+      <h1 id="temp">--°C</h1>
+      <img id="icon" src="" alt="">
+      <p id="condition">Condition</p>
+    </div>
+
+    <div class="details">
+      <div class="card">
+        <p>Humidity</p>
+        <h3 id="humidity">--</h3>
+      </div>
+      <div class="card">
+        <p>Wind</p>
+        <h3 id="wind">--</h3>
+      </div>
+      <div class="card">
+        <p>Feels Like</p>
+        <h3 id="feels">--</h3>
+      </div>
+      <div class="card">
+        <p>UV Index</p>
+        <h3 id="uv">--</h3>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+
+let validBox = document.querySelector(".valid-box");
+let placeName = document.getElementById("place-name");
+let time = document.getElementById("time");
+let temp = document.getElementById("temp");
+let icon = document.getElementById("icon");
+let condition = document.getElementById("condition");
+let humidity = document.getElementById("humidity");
+let wind = document.getElementById("wind");
+let feels = document.getElementById("feels");
+let uv = document.getElementById("uv");
+
+async function fetchData(city) {
+    try {
+        if (!city) {
+            validBox.textContent = "Please enter a city name";
+            return null;
+        }
+
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=e66e04638e8c42038b6120743252609&q=${city}&aqi=yes`);
+        const data = await response.json();
+
+        if (data.error) {
+            validBox.textContent = "Place not found!";
+            return null;
+        }
+
+        validBox.textContent = "";
+        return data;
+
+    } catch (error) {
+        validBox.textContent = "Unable to fetch data";
+    }
+}
+
+async function showWeather() {
+    let cityInput = document.getElementById("cityInput");
+    let city = cityInput.value;
+
+    const weatherData = await fetchData(city);
+
+    if (weatherData) {
+        placeName.textContent = `${weatherData.location.name}, ${weatherData.location.country}`;
+        time.textContent = weatherData.location.localtime;
+        temp.textContent = weatherData.current.temp_c + "°C";
+        icon.src = "https:" + weatherData.current.condition.icon;
+        condition.textContent = weatherData.current.condition.text;
+        humidity.textContent = weatherData.current.humidity + "%";
+        wind.textContent = weatherData.current.wind_kph + " kph";
+        feels.textContent = weatherData.current.feelslike_c + "°C";
+        uv.textContent = weatherData.current.uv;
+
+        // 🎥 Video background (ACTIVE)
+        setVideo(weatherData.current.condition.text);
+
+        // 🎨 Gradient background (OPTIONAL - UNCOMMENT TO USE)
+        // setBackground(weatherData.current.condition.text);
+
+        cityInput.value = "";
+    }
+}
+
+/* 🎥 VIDEO BACKGROUND */
+function setVideo(conditionText) {
+    let condition = conditionText.toLowerCase();
+    let video = document.getElementById("bg-video");
+
+    if (condition.includes("rain")) {
+        video.src = "videos/rain.mp4";
+    } 
+    else if (condition.includes("cloud")) {
+        video.src = "videos/cloudy.mp4";
+    } 
+    else if (condition.includes("sun")) {
+        video.src = "videos/sunny.mp4";
+    } 
+    else {
+        video.src = "videos/clear.mp4";
+    }
+
+    video.load();
+}
+
+/* 🎨 GRADIENT BACKGROUND (OPTIONAL) */
+function setBackground(conditionText) {
+    let condition = conditionText.toLowerCase();
+
+    if (condition.includes("sunny")) {
+        document.body.style.background = "linear-gradient(to right, #fceabb, #f8b500)";
+    } 
+    else if (condition.includes("rain")) {
+        document.body.style.background = "linear-gradient(to right, #4e54c8, #8f94fb)";
+    } 
+    else if (condition.includes("cloud")) {
+        document.body.style.background = "linear-gradient(to right, #bdc3c7, #2c3e50)";
+    } 
+    else if (condition.includes("clear")) {
+        document.body.style.background = "linear-gradient(to right, #56ccf2, #2f80ed)";
+    } 
+    else {
+        document.body.style.background = "linear-gradient(to right, #4facfe, #00f2fe)";
+    }
+}
+
+</script>
+
+</body>
+</html>
